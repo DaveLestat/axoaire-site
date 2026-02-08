@@ -109,6 +109,38 @@ body{
 .section__title{margin:0 0 10px; font-size: clamp(1.6rem, 2.3vw, 2.2rem)}
 .section__subtitle{margin:0 0 26px; color:var(--muted); max-width:70ch}
 
+.experience-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.experience-row--reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.experience-row--reverse .experience-media {
+  order: -1;
+}
+.experience-media img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+.experience-row--reverse img {
+  transform: translateY(6px);
+}
+
+.experience-text {
+  max-width: 52ch;
+}
+
+
 .grid{display:grid; gap:18px}
 .services{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .card{
@@ -213,6 +245,16 @@ input:focus, textarea:focus{border-color: rgba(0,96,160,.55); box-shadow: 0 0 0 
 }
 
 @media (max-width: 920px){
+  .experience-row,
+  .experience-row--reverse {
+    grid-template-columns: 1fr;
+  }
+  .experience-row--reverse .experience-media {
+    order: 0;
+  }
+  .experience-media img {
+    margin-top: 16px;
+  }
   .brand__logo {
     height: 44px;
   }
