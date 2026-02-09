@@ -23,7 +23,7 @@ document.getElementById("waSend")?.addEventListener("click", () => {
     return;
   }
 
-  const phone = "525564450604"; // moi number
+  const phone = "12533017242"; // moi number
 
   const text = `
 Hola AxoAiré,
