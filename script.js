@@ -11,10 +11,33 @@ const io = new IntersectionObserver((entries) => {
 
 els.forEach(el => io.observe(el));
 
-// demo form button (optional)
-document.getElementById("fakeSubmit")?.addEventListener("click", () => {
-  alert("Listo. Para envío real, te configuro Formspree o Netlify Forms en 5 minutos.");
+// WhatsApp handler
+document.getElementById("waSend")?.addEventListener("click", () => {
+  const name = document.querySelector('input[name="name"]')?.value?.trim() || "";
+  const zone = document.querySelector('input[name="zone"]')?.value?.trim() || "";
+  const service = document.querySelector('select[name="service"]')?.value?.trim() || "";
+  const msg  = document.querySelector('textarea[name="message"]')?.value?.trim() || "";
+
+  if (!name && !zone && !msg) {
+    alert("Escribe al menos tu nombre o un mensaje para continuar.");
+    return;
+  }
+
+  const phone = "525564450604"; // moi number
+
+  const text = `
+Hola AxoAiré,
+Nombre: ${name || "(no indicado)"}
+Zona/Colonia: ${zone || "(no indicado)"}
+Tipo de servicio: ${service || "(no indicado)"}
+Mensaje:
+${msg || "(sin mensaje)"}
+`.trim();
+
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
 });
+
 
 // mobile menu (simple)
 const hamburger = document.querySelector(".hamburger");

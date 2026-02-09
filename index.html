@@ -11,7 +11,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#inicio">
-      <img src="assets\testlogo.png" alt="AxoAiré logo" class="brand__logo" />
+      <img src="assets\logo-axoaire2.png" alt="AxoAiré logo" class="brand__logo" />
       <span class="brand__name">AxoAiré</span>
     </a>
 
@@ -61,34 +61,52 @@
         <p class="section__subtitle reveal">Paquetes claros. Trabajo documentado. Enfoque en eficiencia y confiabilidad.</p>
 
         <div class="grid services">
-          <article class="card reveal">
-            <h3>Actualización y mantenimiento</h3>
-            <p>Limpieza profunda, verificación eléctrica, drenaje, pruebas básicas y recomendaciones.</p>
-            <ul>
-              <li>Lavado de serpentín</li>
-              <li>Tratamiento de drenaje</li>
-              <li>Checklist de operación</li>
-            </ul>
+          <article class="card service-card">
+            <div class="service-card__media">
+              <img src="assets/techPM.JPG" alt="Actualización y mantenimiento HVAC" loading="lazy">
+            </div>
+
+            <div class="service-card__body">
+              <h3>Actualización y mantenimiento</h3>
+              <p>Limpieza profunda, verificación eléctrica, drenaje,pruebas básicas y recomendaciones.</p>
+              <ul>
+                <li>Lavado de serpentín</li>
+                <li>Tratamiento de drenaje</li>
+                <li>Checklist de operación</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="card reveal">
-            <h3>Soluciones de energía eficiente</h3>
-            <p>Diagnóstico para reducir consumo: cargas, setpoints, fugas, control y hábitos.</p>
-            <ul>
-              <li>Recomendación por uso</li>
-              <li>Protección contra variación</li>
-              <li>Optimización de operación</li>
-            </ul>
+          <article class="card service-card">
+            <div class="service-card__media">
+              <img src="assets/vrf.jpg" alt="Actualización y mantenimiento HVAC" loading="lazy">
+            </div>
+
+            <div class="service-card__body">
+              <h3>Soluciones de energía eficiente</h3>
+              <p>Diagnóstico para reducir consumo: cargas, setpoints, fugas, control y hábitos.</p>
+              <ul>
+                <li>Recomendación por uso</li>
+                <li>Protección contra variación</li>
+                <li>Optimización de operación</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="card reveal">
-            <h3>Mantenimiento y reparación comercial</h3>
-            <p>Enfoque técnico y documentación para negocios: paros cuestan dinero.</p>
-            <ul>
-              <li>RTU / VRF / mini-splits</li>
-              <li>Fallas intermitentes</li>
-              <li>Plan PM mensual/trimestral</li>
-            </ul>
+          <article class="card service-card">
+            <div class="service-card__media">
+              <img src="assets/vrfInstall.jpeg" alt="Mantenimiento y reparación comercial" loading="lazy">
+            </div>
+
+            <div class="service-card__body">
+              <h3>Mantenimiento y reparación comercial</h3>
+              <p>Enfoque técnico y documentación para negocios: paros cuestan dinero.</p>
+              <ul>
+                <li>RTU / VRF / mini-splits</li>
+                <li>Fallas intermitentes</li>
+                <li>Plan PM mensual/trimestral</li>
+              </ul>
+            </div>
           </article>
         </div>
       </div>
@@ -175,7 +193,7 @@
             <div class="step__num">3</div>
             <div class="step__body">
               <h3>Ejecución + evidencia</h3>
-              <p>Vacío, prueba, puesta en marcha y reporte con fotos.(sistemas comerciales)</p>
+              <p>Vacío, prueba, puesta en marcha y reporte con fotos.(sistemas com)</p>
             </div>
           </div>
         </div>
@@ -268,36 +286,64 @@
     <!-- CONTACT -->
     <section id="contacto" class="section section--cta">
       <div class="container contact">
+
+        <!-- LEFT: CTA -->
         <div class="reveal">
           <h2>¿Listo para cotizar?</h2>
-          <p>Envíame tu ubicación, tipo de equipo y el problema. Respondo por WhatsApp.</p>
+          <p>
+            Envíame tu nombre, zona y el problema.
+            Al enviar, se abrirá WhatsApp con el mensaje listo para mandarse.
+          </p>
 
           <div class="contact__actions">
-            <!-- Cambia el número al tuyo (formato internacional recomendado: 52 + número) -->
+            <!-- Direct WhatsApp shortcut (no form) -->
             <a class="btn" target="_blank" rel="noopener"
-               href="https://wa.me/525564450604?text=Hola%20AxoAir%C3%A9,%20quiero%20una%20cotizaci%C3%B3n.">
-              WhatsApp
+              href="https://wa.me/525564450604?text=Hola%20AxoAir%C3%A9,%20quiero%20una%20cotizaci%C3%B3n.">
+              Abrir WhatsApp
             </a>
-            <a class="btn btn--ghost" href="mailto:david.cerino.u@gmail.com">Email</a>
           </div>
         </div>
 
+        <!-- RIGHT: WhatsApp Form -->
         <form class="form reveal" action="#" method="post" onsubmit="return false;">
           <label>
             Nombre
-            <input type="text" name="name" autocomplete="name" />
+            <input type="text" name="name" autocomplete="name" placeholder="Tu nombre" />
           </label>
+
           <label>
             Zona / Colonia
-            <input type="text" name="zone" />
+            <input type="text" name="zone" placeholder="Ej. Francisco de Montejo" />
           </label>
+
+          <label>
+            Tipo de servicio
+            <select name="service">
+              <option value="">Selecciona una opción…</option>
+              <option>Mantenimiento</option>
+              <option>No enfría</option>
+              <option>Instalación</option>
+              <option>Ruido / Vibración</option>
+              <option>Fuga de agua</option>
+              <option>Revisión general</option>
+            </select>
+          </label>
+
           <label>
             Mensaje
-            <textarea name="message" rows="4" placeholder="Tipo de equipo, síntomas, horario ideal..."></textarea>
+            <textarea name="message" rows="4"
+              placeholder="Tipo de equipo, síntomas, horario ideal..."></textarea>
           </label>
-          <button class="btn btn--block" type="submit" id="fakeSubmit">Enviar</button>
-          <p class="fineprint">*Este formulario es demo. Si quieres envío real, te digo 2 opciones simples (Formspree / Netlify Forms).</p>
+
+          <button class="btn btn--block" type="button" id="waSend">
+            Enviar por WhatsApp
+          </button>
+
+          <p class="fineprint">
+            Al presionar “Enviar por WhatsApp”, se abrirá WhatsApp con el mensaje preparado.
+          </p>
         </form>
+
       </div>
     </section>
 

@@ -33,7 +33,7 @@ body{
 }
 
 .brand{display:flex; gap:14px; align-items:center; text-decoration:none; color:inherit}
-.brand__logo{filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25)); width:100px; height:100px; object-fit:contain}
+.brand__logo{filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25)); width:200px; height:200px; object-fit:contain}
 .brand__name{font-size: 1.5rem;font-weight:800; letter-spacing:.2px; color:#ffffff}
 
 .nav{display:flex; gap:48px; align-items:center}
@@ -223,6 +223,26 @@ body{
   color: var(--muted);
 }
 
+/*added styling for the services cards */
+.service-card {
+  overflow: hidden; /* keeps rounded corners clean */
+}
+
+.service-card__media {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.service-card__media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.service-card__body {
+  padding: 18px;
+}
 
 
 .grid{display:grid; gap:18px}
@@ -311,6 +331,21 @@ input, textarea{
 }
 input:focus, textarea:focus{border-color: rgba(0,96,160,.55); box-shadow: 0 0 0 4px rgba(0,96,160,.12)}
 .fineprint{font-size:.9rem; color:var(--muted); margin-top:10px}
+
+/* Styling for the form selectors */
+select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.14);
+  background:rgba(255,255,255,.9);
+  outline:none;
+}
+select:focus{
+  border-color: rgba(0,96,160,.55);
+  box-shadow: 0 0 0 4px rgba(0,96,160,.12);
+}
+
 
 .footer{
   padding:24px 0;
