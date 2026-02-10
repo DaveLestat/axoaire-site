@@ -39,14 +39,31 @@ ${msg || "(sin mensaje)"}
 });
 
 
-// mobile menu (simple)
+
+// mobile menu (class toggle - no inline styles)
 const hamburger = document.querySelector(".hamburger");
-const nav = document.querySelector(".nav");
+const topbar = document.querySelector(".topbar");
 
 hamburger?.addEventListener("click", () => {
   const expanded = hamburger.getAttribute("aria-expanded") === "true";
   hamburger.setAttribute("aria-expanded", String(!expanded));
-
-  // super simple toggle: show/hide
-  if (nav) nav.style.display = expanded ? "none" : "flex";
+  topbar?.classList.toggle("is-open");
 });
+
+// safety: when going back to desktop, reset menu state
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 920) {
+    topbar?.classList.remove("is-open");
+    hamburger?.setAttribute("aria-expanded", "false");
+  }
+});
+
+
+// document.querySelectorAll(".nav a").forEach(link => {
+//   link.addEventListener("click", () => {
+//     topbar?.classList.remove("is-open");
+//     hamburger?.setAttribute("aria-expanded", "false");
+//   });
+// });
+
+
